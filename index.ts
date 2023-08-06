@@ -1,6 +1,8 @@
 import { ajax } from 'rxjs/ajax';
 import { forkJoin } from 'rxjs';
 
+// https://www.learnrxjs.io/learn-rxjs/operators/combination/forkjoin
+
 /*
   when all observables complete, provide the last
   emitted value from each as dictionary
@@ -10,8 +12,8 @@ forkJoin(
   {
     google: ajax.getJSON('https://api.github.com/users/google'),
     microsoft: ajax.getJSON('https://api.github.com/users/microsoft'),
-    users: ajax.getJSON('https://api.github.com/users')
+    users: ajax.getJSON('https://api.github.com/users'),
   }
 )
-// { google: object, microsoft: object, users: array }
-.subscribe(console.log);
+  // { google: object, microsoft: object, users: array }
+  .subscribe(console.log);
